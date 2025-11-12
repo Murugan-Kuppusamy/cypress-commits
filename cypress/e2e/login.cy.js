@@ -6,5 +6,6 @@ describe('Login test', () => {
     cy.get('button[type="submit"]').click()
     cy.url().should('eq', 'https://conduit.bondaracademy.com/')
     cy.get('h1').should('have.text', 'conduit')
+    cy.get('a').contains('conduit')
   })
 })
