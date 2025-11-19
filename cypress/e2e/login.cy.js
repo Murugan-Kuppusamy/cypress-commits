@@ -7,5 +7,8 @@ describe('Login test', () => {
     cy.url().should('eq', 'https://conduit.bondaracademy.com/')
     cy.get('h1').should('have.text', 'conduit')
     cy.get('a').contains('conduit')
+    cy.get('app-article-list').find('app-article-preview').then((articleList) => {
+      articleList.eq(0).should('contain', 'New title')
+    })
   })
 })
